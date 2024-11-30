@@ -1,8 +1,13 @@
 import * as React from "react";
 
-interface MyLayoutprops {}
+interface MyLayoutProps {
+  children: React.ReactNode;
+  history: {
+    push: (path: string) => void;
+  };
+}
 
-const MyLayout: React.FC = ({ children, history }) => {
+const MyLayout: React.FC<MyLayoutProps> = ({ children, history }) => {
   return (
     <div>
       {children}
